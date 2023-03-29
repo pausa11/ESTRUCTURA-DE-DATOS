@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
- 
+
 using namespace std;
 
 struct nodo//estructura llamada "nodo"
@@ -12,7 +12,6 @@ struct nodo//estructura llamada "nodo"
 	 número entero y un puntero al siguiente nodo en la lista.*/
 };
 typedef nodo *ptrPila; //variable que sea un puntero a una estructura "nodo"
-
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -113,6 +112,35 @@ void Mostrar_x(ptrPila &p, int valor)//funcion mostrar si un elemento X se encue
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+/*void Asendente(ptrPila &p)
+{
+	ptrPila aux;
+	aux=p;
+	ptrPila cont;
+	cont=p;
+	cont=cont->sgte;
+	for(aux;aux!=NULL;aux=aux->sgte)
+	{
+		if((cont->nro)<(aux->nro)) 
+    //	if(cont<aux) 
+		{
+			cout<<cont->nro<<" es menor que "<<aux->nro;
+			cout<<", está en orden asendente\n"; 
+			cont=cont->sgte	;
+		}	
+		else
+		{
+			cout<<"no está en orden asendente\n";
+			cout<<cont<<" no es mayor que "<<aux<<endl;
+			cout<<cont->nro<<" no es mayor que "<<aux->nro;
+			break;
+		}
+	}
+	
+}*/
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 void Ascendente(ptrPila p) 
 {
     if (p == NULL || p->sgte == NULL) 
@@ -207,6 +235,41 @@ void compararPilas(ptrPila &p1,ptrPila &p2)
 		}
 	}
 }
+
+/*void compararPilas(ptrPila p1, ptrPila p2) 
+{
+    // Check for empty stacks
+    if (p1 == NULL || p2 == NULL) 
+	{
+        cout << "No son iguales" << endl;
+        return;
+    }
+    
+    // Initialize flag variable and counter
+    bool igual = true;
+    int i = 0;
+    
+    // Loop through the stacks
+    for (ptrPila aux1 = p1, aux2 = p2; aux1 != NULL && aux2 != NULL; aux1 = aux1->sgte, aux2 = aux2->sgte) 
+	{
+        i++;
+        if (aux1->nro != aux2->nro) 
+		{
+            igual = false;
+            break;
+        }
+    }
+    
+    // Check whether the stacks are equal
+    if (igual && aux1 == NULL && aux2 == NULL) 
+	{
+        cout << "SON IGUALES" << endl;
+    } 
+	else 
+	{
+        cout << "No son iguales" << endl;
+    }
+}*/
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
